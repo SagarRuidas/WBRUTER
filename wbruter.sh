@@ -356,7 +356,7 @@ android_cli_bruteforce_facematch() {
 # --- ANDROID RELATED ENDS HERE ---- ----------------------------------------------------
 
 
-banner() {
+viaplay_banner() {
 cat << "EOF"
                  _             _
 __      ____   _(_) __ _ _ __ | | __ _ _   _
