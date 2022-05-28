@@ -43,8 +43,12 @@
 #
 # - End of Header -------------------------------------------------------------
 
-## usages
+add_to_conf() {
+ANDROID_VERSION="$(adb shell getprop ro.product.build.version.release)"
+DEVICE_ROOTED="$( adb shell hash su; [[ $? = "0" ]] && echo yes||echo no)"
+}
 
+## usages
 show_help_android() {
  if [[ -z $1 ]];then
      STATUS=$(cat $(pwd)/.wdroid-status)
