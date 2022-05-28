@@ -255,7 +255,7 @@ android_cli_bruteforce_passphrase() {
     echo "adding next"
 }
 
-android_cli_bruteforce_fingerprint() {
+android_cli_bruteforce_facematch() {
     echo "adding next"
 }
 
