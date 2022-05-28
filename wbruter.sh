@@ -1,5 +1,5 @@
 #!/bin/bash
-
+## Hey dev, I am not sure how to execute all commands yet but I think i will do this with getopts and longoptions
 # - iNFO -----------------------------------------------------------------------------
 #
 #        Author: wuseman <wuseman@nr1.nu>
