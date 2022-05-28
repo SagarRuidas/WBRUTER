@@ -50,10 +50,30 @@
 #
 # --------------------------------------------------------------------------------------
 add_to_conf() {
+# Android
     DEVICE_VERSION="$(adb shell getprop ro.product.build.version.release)"
     DEVICE_ROOTED="$( adb shell hash su; [[ $? = "0" ]] && echo yes||echo no)"
     DEVICE_MODEL="$(adb shell getprop ro.product.model)"
     DEVICE_SHEALTHSAMSUNG="$(adb shell getpropinit.svc.health-hal-2-1-samsung)"
+
+# SSH
+# ...
+
+# FTP
+# ...
+
+# MISC
+# ...
+
+# GMAIL
+# ...
+
+# CORES
+# ...
+ 
+# THREADS 
+# ...
+
 }
 
 # -Author ---------------------------------------------------------------------------
