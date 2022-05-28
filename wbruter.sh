@@ -1,10 +1,4 @@
 #!/bin/bash
-# Until im done
-echo "You really should learn read readmes or commits, doing it for you.."
-sleep 1
-bash wbruter.working.sh -h
-
-exit 
 
 # - iNFO -----------------------------------------------------------------------------
 #
@@ -13,7 +7,7 @@ exit
 #       Version: v3.0
 #
 #       Created: 2018-16 (23:53:08)
-#      Modified: 
+#      Modified: 2022-05-28 (03:04:23)
 #
 #           iRC: wuseman (Libera/EFnet/LinkNet) 
 #       Website: https://www.nr1.nu/
@@ -50,23 +44,25 @@ exit
 # - End of Header -------------------------------------------------------------
 
 add_to_conf() {
-ANDROID_VERSION="$(adb shell getprop ro.product.build.version.release)"
-DEVICE_ROOTED="$( adb shell hash su; [[ $? = "0" ]] && echo yes||echo no)"
+    ANDROID_VERSION="$(adb shell getprop ro.product.build.version.release)"
+    DEVICE_ROOTED="$( adb shell hash su; [[ $? = "0" ]] && echo yes||echo no)"
 }
 
 
 show_help_android() {
- if [[ -z $1 ]];then
-     STATUS=$(cat $(pwd)/.wdroid-status)
-     rm $(pwd)/.wdroid-status
-     if [[ $STATUS = "normal" ]]; then
+    if [[ -z $1 ]];then
+        STATUS=$(cat $(pwd)/.wdroid-status)
+        rm $(pwd)/.wdroid-status
+        if [[ $STATUS = "normal" ]]; then
             printf "\nDevice is in $STATUS mode, what are you trying to do?"
-           printf "Your device must be in normal mode when attacking pin code\n"
-         usage
-         fi
- }
+            printf "Your device must be in normal mode when attacking pin code\n"
+            usage
+        fi
+    fi    
+}
 
- function show_help_ftp (){
+
+show_help_ftp(){
     cat << EOF
 
       Usage: $basename$0 [-i ip] [-p port] [-u [user] [-P password] ftp_command 
@@ -81,7 +77,7 @@ show_help_android() {
 EOF
 
 }
- 
+
 
 ################################################################################
 ################################################################################
@@ -115,11 +111,12 @@ android_status() {
     fi
 }
 
-adb devices |sed -n 2p|grep una &> /dev/null
-if [[ $? -eq "0" ]]; then
-    echo "* Your device has not been authorized with this pc, aborted."
-    exit
-fi
+check_auth() {
+    adb devices |sed -n 2p|grep una &> /dev/null
+    if [[ $? -eq "0" ]]; then
+        echo "* Your device has not been authorized with this pc, aborted."
+        exit
+    fi
 
 }
 
@@ -265,7 +262,7 @@ android_cli_bruteforce_removeCache() {
 }
 
 android_cli_set-resume-on-reboot-provider-package() {
-    echo "adding next"
+echo "adding next"
 }
 
 
@@ -289,16 +286,6 @@ android_cli_bruteforce_facematch() {
 android_cli_bruteforce_facematch() {
     echo "adding next"
 }
-
-################################################################################
-################################################################################
-####                                                                        ####
-#### FTP                                                                    ####
-####                                                                        ####
-################################################################################
-################################################################################
-
-
 
 while getopts ":i:p:u:P:avh" o; do
     case "${o}" in
