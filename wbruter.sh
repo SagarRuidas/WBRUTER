@@ -50,6 +50,15 @@
 #
 # --------------------------------------------------------------------------------------
 add_to_conf() {
+# Misc
+
+WAN_IP_ETH="$(curl ifconfig.co)"
+WAN_IP_WIFI=""
+WAN_IP_GPRS=""
+WAN_IP_BLUETOOTH=""
+LAN_IP_ETH=""
+LAN_IP_WIFI=""
+
 # Android
     DEVICE_VERSION="$(adb shell getprop ro.product.build.version.release)"
     DEVICE_ROOTED="$( adb shell hash su; [[ $? = "0" ]] && echo yes||echo no)"
@@ -66,7 +75,21 @@ SSH_KEY=""
 SSH_CIPHER=""
 
 # FTP
-FTP_USER=""
+FTP_USER="ftp:anon-user anonymous"
+FTP_PASS="ftp:anon-pass anonymous"
+FTP_SHELL="bash"
+
+# If  true,  lftp  uses  control  connection address instead of the one returned in PASV
+# reply for data connection. This can be useful for broken NATs.  Default is false.
+
+FTP_MODE="ftp:ignore-pasv-address false"
+
+
+
+
+# if set to false, empty lists from LIST command  will  be  treated  as  incorrect,  and
+# another method (NLST) will be used.
+FTP_LEMPTY="ftp:list-empty-ok"
 
 # MISC
 # ...
