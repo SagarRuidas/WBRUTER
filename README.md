@@ -1,7 +1,8 @@
 # WBRUTER
 
-Upgrade in Progress....Are your password cracked on the picture? Don't blame me, blame the site admin that is NOT banning bruteforce attempts.
-
+Upgrade in Progress....Are your password cracked on the picture? Don't blame me, blame the site admin that is NOT banning bruteforce attempts
+ + It's not my screens, k? Whatever, that guy who used my tool for this wanted to show me his screens, looks cool, right? 
+ 
 Don't hate the player hate the game!
 
 ![PXL_20211205_050640387](https://user-images.githubusercontent.com/26827453/170805172-18164670-ddc6-4037-849a-0c43ccec9651.jpg)
