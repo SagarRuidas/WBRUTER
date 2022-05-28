@@ -193,28 +193,17 @@ multidevices() {
 ####                                                                        ####
 ################################################################################
 ################################################################################
-android_usage() {
-    if [[ -z $1 ]];then
-        STATUS=$(cat $(pwd)/.wdroid-status)
-        rm $(pwd)/.wdroid-status
-        if [[ $STATUS = "normal" ]]; then
-            printf "\nDevice is in $STATUS mode, what are you trying to do?
-
-            Usage:
-
-            ./wbruter --android 4         # Attack android device via locksettings protected by 4 digits
-            ./wbruter --android 6         # Attack android device via locksettings protected by 6 digits
-            ./wbruter --android-gui 4     # Attack android device pin code via gui-screen protected by 4 digits
-            ./wbruter --android-gui 6     # Attack android device pin code via gui-screen protected by 6 digits
-
-            "
-            exit 1
-        fi
-    else
-        printf "Your device must be in normal mode when attacking pin code\n"
-    fi
-}
-
+# android_usage() {
+#     if [[ -z $1 ]];then
+#         STATUS=$(cat $(pwd)/.wdroid-status)
+#         rm $(pwd)/.wdroid-status
+#         if [[ $STATUS = "normal" ]]; then
+# #            printf "\nDevice is in $STATUS mode, what are you trying to do?"
+#  #           printf "Your device must be in normal mode when attacking pin code\n"
+#             usage
+#         fi
+# }
+# 
 ################################################################################
 ################################################################################
 ####                                                                        ####
@@ -717,13 +706,13 @@ elif [[ $1 = "--android" && $2 = "6" ]] || [[ $1 = "-a" && $2 = "6" ]]; then
     android_status
     multidevices
     android6
-elif [[ $1 = "--android-gui" && $2 = "4" ]] || [[ $1 = "-A" && $2 = "4" ]]; then
+elif [[ $1 = "--androidg" && $2 = "4" ]] || [[ $1 = "-A" && $2 = "4" ]]; then
     androiddebug
     adbexist
     android_status
     multidevices
     androidgui4
-elif [[ $1 = "--android-gui" && $2 = "6" ]] || [[ $1 = "-A" && $2 = "6" ]]; then
+elif [[ $1 = "--androidg" && $2 = "6" ]] || [[ $1 = "-A" && $2 = "6" ]]; then
     androiddebug
     adbexist
     android_status
@@ -773,41 +762,26 @@ elif [[ $1 = "-z" || $1 = "-zip" || $1 = "--ZIP" || $1 = "--z" ]]; then
 elif [[ $1 = "-Z" || $1 = "-znc"  || $1 = "--Z" || $1 = "--ZNC" ]]; then
     zncattack
 else
+    usage() {
+cat << EOF
+ 
+   ./wbruter.sh [option]  
 
-    if [[ $* = "-n" ]]; then
-        printf "
-
-        $basename$0 $VERSION - is a tool for using brute force & dictionary attacking methods to attack various stuff written in \e[1;1mpure\e[0m bash code
-
-        --android [4] [6] [wordfile]   - Brute force attack any android device with 100% guarantee to crack pin via locksettings
-        --android-gui [4] [6]           - Brute force attack any android device via gui/login screen
-        --ftp                          - Dictionary attack for crack password for on a ftp server (ftps is supported)
-        --gmail                        - Dictionary attack for crack password for any gmail account
-        --github                       - Dictionary attack for github accounts via web
-        --gpg                          - Dictionary attack for break the encryption of GPG encrypted files protected by a passphrase
-        --rar                          - Dictionary attack for break the encryption of rar files
-        --ssh                          - Dictionary attack for crack ssh passphrase on any ssh server via parallel ssh (all versions supported)
-        --zip                          - Dictionary attack a zip encryptedfile, brute force mode is enable for ZIP files
-        --znc                          - Dictionary attack for ZNC bouncer's web loginn
-        --version                      - Print version of $basename$0
-
-        "
-    else
-
-cat << "EOF"
- $basename$0 $VERSION - is a tool for using brute force & dictionary attacking methods to attack various stuff written in \e[1;1mpure\e[0m bash code
-
-       --android [4] [6] [wordfile]   - Brute force attack any android device via /system/bin/locksettings (cli)
-       --android-gui [4] [6]          - Brute force attack any android device via gui/login screen (cli)
+       -a|--android  [4]              - Brute force attack the pin code with 4 digits. (cli)
+       -a|--android  [6]              - Brute force attack the pin code with 4 digits. (cli)
+       -A|--androidg [4]              - Brute force attack the pin code with 4 digits. (touch screen / gui) 
+       -A|--androidg [6]              - Brute force attack the pin code with 4 digits. (touch screen / gui) 
        --ftp                          - Dictionary attack for crack password for on a ftp server (ftps is supported)
        --gmail                        - Dictionary attack for crack password for any gmail account
        --github                       - Dictionary attack for github accounts via web
        --gpg                          - Dictionary attack for break the encryption of GPG encrypted files protected by a passphrase
        --rar                          - Dictionary attack for break the encryption of rar files
-       --ssh                          -Dictionary attack for crack ssh passphrase on any ssh server via parallel ssh (all versions supported)
+       --ssh                          - Dictionary attack for crack ssh passphrase on any ssh server via parallel ssh (all versions supported)
        --zip                          - Dictionary attack a zip encryptedfile, brute force mode is enable for ZIP files
        --znc                          - Dictionary attack for ZNC bouncer's web loginn
-       --version                      - Print version of $(basename$0)
+       --version                      - Print version of $basename$0
+
 EOF
-    fi
+}
+usage
 fi
