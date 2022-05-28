@@ -290,6 +290,12 @@ android_cli_6digits_older() {
     done
 }
 
+#### IF MODEL !IS OLDER THEN ANDROID 10 SLOW METHOD; THEN USE OLD METHOD!!
+
+#android_cli_4digits_older
+#android_cli_6digits_older
+
+
 android_cli_bruteforce_check_lock_method() {
     echo "adding next"
 }
@@ -328,6 +334,42 @@ android_cli_bruteforce_facematch() {
 android_cli_bruteforce_facematch() {
     echo "adding next"
 }
+
+
+
+gmail_bruteforce() {
+    echo "TEMP: adding a new and faster method within hours or few days - TO BE REMOVED"
+}
+
+
+gpg_bruteforce() {
+    echo "TEMP: adding a new and faster method within hours or few days - TO BE REMOVED"
+}
+
+rar_bruteforce() {
+    echo "TEMP: adding a new and faster method within hours or few days - TO BE REMOVED"
+}
+
+ssh_bruteforce() {
+        echo "TEMP: adding a new and faster method within hours or few days - TO BE REMOVED"
+}
+
+
+znc_bruteforce() {
+        echo "TEMP: adding a new and faster method within hours or few days - TO BE REMOVED"
+}
+
+
+
+ftp_bruteforce() {
+    which ftp &> /dev/null
+    if [[ $? -eq "1" ]]; then
+        printf "+ You must install \e[1;1mftp\e[0m package before you can attack by this method, aborted\n" 
+        exit 0
+    fi
+
+
+
 
 while getopts ":i:p:u:P:avh" o; do
     case "${o}" in
@@ -372,3 +414,4 @@ elif [[ $@ = "-d" ]]; then
 else
     lftp -u ${u}:${P} ${i} -p ${p} -e "$*;exit" -d 
 fi
+}
