@@ -57,10 +57,16 @@ add_to_conf() {
     DEVICE_SHEALTHSAMSUNG="$(adb shell getpropinit.svc.health-hal-2-1-samsung)"
 
 # SSH
-# ...
+SSH_HOST=""
+SSH_PORT=""
+SSH_HOSTFILE=""
+SSH_USER="$(whoami)"
+SSH_PASS=""
+SSH_KEY=""
+SSH_CIPHER=""
 
 # FTP
-# ...
+FTP_USER=""
 
 # MISC
 # ...
@@ -73,6 +79,8 @@ add_to_conf() {
  
 # THREADS 
 # ...
+
+
 
 }
 
