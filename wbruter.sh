@@ -43,7 +43,21 @@
 #
 # - End of Header -------------------------------------------------------------
 
-function show_help (){
+## usages
+
+show_help_android() {
+ if [[ -z $1 ]];then
+     STATUS=$(cat $(pwd)/.wdroid-status)
+     rm $(pwd)/.wdroid-status
+     if [[ $STATUS = "normal" ]]; then
+            printf "\nDevice is in $STATUS mode, what are you trying to do?"
+           printf "Your device must be in normal mode when attacking pin code\n"
+         usage
+         fi
+ }
+
+
+ function show_help_ftp (){
     cat << EOF
 
       Usage: $basename$0 [-i ip] [-p port] [-u [user] [-P password] ftp_command 
@@ -58,6 +72,111 @@ function show_help (){
 EOF
 
 }
+ 
+
+################################################################################
+################################################################################
+####                                                                        ####
+#### ANDROID                                                                ####
+####                                                                        ####
+################################################################################
+################################################################################
+
+androiddebug() {
+    case $(adb devices | awk '{print $2}' | sed 1d | sed '$d') in
+        "unauthorized") echo "* You must enable usb-debugging in developer settings." ;;
+    esac
+}
+
+android_status() {
+    ADBW=$(adb devices | sed -n '2p'|awk '{print $2}' | sed 's/device/normal/g')
+    ADBF="$(fastboot devices | grep fastboot|awk '{print $2}')"
+    ADBOFF="$(adb devices | sed -n 2p)"
+    if [[ $ADBW = "normal" ]]; then
+        echo "normal" > $(pwd)/.wdroid-status
+    elif [[ $ADBW = "unauthorized" ]]; then
+        echo " * Please allow this pc to authorize" > $(pwd)/.wdroid-status
+    elif [[ $ADBW = "recovery" ]]; then
+        echo "recovery" > $(pwd)/.wdroid-status
+    elif [[ $ADBF = "fastboot" ]]; then
+        echo "fastboot" > $(pwd)/.wdroid-status
+    else
+        echo "* No device connected.."
+        exit
+    fi
+}
+
+adb devices |sed -n 2p|grep una &> /dev/null
+if [[ $? -eq "0" ]]; then
+    echo "* Your device has not been authorized with this pc, aborted."
+    exit
+fi
+
+}
+
+
+adbexist() {
+    adb="$(which adb 2> /dev/null)"
+    distro="$(cat /etc/os-release | head -n 1 | cut -d'=' -f2 | sed 's/"//g')"
+
+    if [ -z "$adb" ]; then
+        printf "+ You must install \e[1;1madb\e[0m package before you can attack by this method.\n" 
+        read -p "Install adb (Y/n) " adbinstall
+    fi
+
+    case $adbinstall in
+        "Y")
+            echo -e "\nPlease wait..\n"
+            sleep 1
+            case $distro in
+                "Gentoo")
+                    echo -e "It seems you running \e[1;32m$distro\e[0m wich is supported, installing adb....\n"
+                    emerge --ask android-tools ;;
+                "Sabayon")
+                    echo -e "It seems you running \e[1;32m$distro\e[0m wich is supported, installing adb....\n"
+                    emerge --ask android-tools ;;
+                "Ubuntu")
+                    echo -e "It seems you running \e[1;32m$distro\e[0m wich is supported, installing adb....\n"
+                    apt update -y; apt upgrade -y; apt-get install adb ;;
+                "Debian")
+                    echo -e "It seems you running \e[1;32m$distro\e[0m wich is supported, installing adb....\n"
+                    apt update -y; apt upgrade -y; apt-get install adb ;;
+                "Raspbian")
+                    echo -e "It seems you running \e[1;32m$distro\e[0m wich is supported, installing adb....\n"
+                    apt update -y; apt upgrade -y; apt-get install adb ;;
+                "Mint")
+                    echo -e "It seems you running \e[1;32m$distro\e[0m wich is supported, installing adb....\n"
+                    apt update -y; apt upgrade -y; apt-get install adb ;;
+                "no") echo "Aborted." ;
+                    exit 0 ;;
+            esac
+            echo -e "This tool is not supported for $distro, please go compile it from source instead...\n"
+    esac
+}
+
+
+multidevices() {
+    ADBTOT="$(adb devices | sed 1d|head -2|grep device|wc -l)"
+
+    if [[ $ADBTOT -gt "1" ]]; then
+        echo "You have more then one device connected, please choose one of:" 
+        #    echo $(adb devices| awk '{print NR-1 " - " $0}'|sed "1d;$d"|awk '{print $1 ")", $3}'|sed '$d';) 
+        exit 1
+    fi
+}
+
+
+
+
+################################################################################
+################################################################################
+####                                                                        ####
+#### FTP                                                                    ####
+####                                                                        ####
+################################################################################
+################################################################################
+
+
 
 while getopts ":i:p:u:P:avh" o; do
     case "${o}" in
