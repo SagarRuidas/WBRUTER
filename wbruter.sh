@@ -51,7 +51,6 @@
 # --------------------------------------------------------------------------------------
 add_to_conf() {
 # Misc
-
     WAN_IP_ETH="$(curl ifconfig.co)"
     WAN_IP_WIFI=""
     WAN_IP_GPRS=""
@@ -64,6 +63,12 @@ add_to_conf() {
     DEVICE_ROOTED="$( adb shell hash su; [[ $? = "0" ]] && echo yes||echo no)"
     DEVICE_MODEL="$(adb shell getprop ro.product.model)"
     DEVICE_SHEALTHSAMSUNG="$(adb shell getpropinit.svc.health-hal-2-1-samsung)"
+
+# GMAIL
+    GMAIL_USER="fooboo"
+    GMAIL_EMAIL="fooboo@gmail.com" # we dont need gmail.com when using smtp
+    GMAIL_PASS="fooboopassword"
+    GMAIL_FILELIST="$(blabla read line PARALLEL with curl -z)"
 
 # SSH
     SSH_HOST=""
@@ -78,28 +83,19 @@ add_to_conf() {
     FTP_USER="ftp:anon-user anonymous"
     FTP_PASS="ftp:anon-pass anonymous"
     FTP_SHELL="bash"
-#### If  MODE = TRUE, lftp  uses  control  connection address instead of the one returned in PASV
-#### reply for data connection. This can be useful for broken NATs.  Default is false.
+    #### If  MODE = TRUE, lftp  uses  control  connection address instead of the one returned in PASV
+    #### reply for data connection. This can be useful for broken NATs.  Default is false.
     FTP_MODE="ftp:ignore-pasv-address false"
+    #### if set to false, empty lists from LIST command  will  be  treated  as  incorrect,  and
+    #### another method (NLST) will be used.
+    FTP_LEMPTY="ftp:list-empty-ok"
 
-#### if set to false, empty lists from LIST command  will  be  treated  as  incorrect,  and
-#### another method (NLST) will be used.
-FTP_LEMPTY="ftp:list-empty-ok"
-
-# MISC
-# ...
-
-# GMAIL
-# ...
-
-# CORES
-# ...
+# CORES (set as NOT default - this is for bruteforcing faster and other things will be done from this, curl in parallel etc )
+    CPU_FAMILY_INTEL=$(cat /sys/devices/cpu/caps/pmu_name)  # wuseman style: https://unix.stackexchange.com/a/530726
+    CPU_CORES=$(nproc)
+    CPU_CORES_PLUS_ONE=$(( NUMCPUS + 1 ))
+    CPU_THREADS=(echo CPU threads: $(grep -c processor /proc/cpuinfo))
  
-# THREADS 
-# ...
-
-
-
 }
 
 # -Author ---------------------------------------------------------------------------
