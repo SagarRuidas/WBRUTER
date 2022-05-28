@@ -6,8 +6,8 @@
 #      FileName: wbruter.sh
 #       Version: v3.0
 #
-#       Created: 2018-16 (23:53:08)
-#      Modified: 2022-05-28 (03:05:49)
+#       Created: 2018-16-XX (23:53:08)
+#      Modified: 2022-05-28 (03:06:36)
 #
 #           iRC: wuseman (Libera/EFnet/LinkNet) 
 #       Website: https://www.nr1.nu/
