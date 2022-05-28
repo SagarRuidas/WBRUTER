@@ -55,6 +55,17 @@ DEVICE_ROOTED="$( adb shell hash su; [[ $? = "0" ]] && echo yes||echo no)"
 }
 
 
+show_help_android() {
+ if [[ -z $1 ]];then
+     STATUS=$(cat $(pwd)/.wdroid-status)
+     rm $(pwd)/.wdroid-status
+     if [[ $STATUS = "normal" ]]; then
+            printf "\nDevice is in $STATUS mode, what are you trying to do?"
+           printf "Your device must be in normal mode when attacking pin code\n"
+         usage
+         fi
+ }
+
  function show_help_ftp (){
     cat << EOF
 
