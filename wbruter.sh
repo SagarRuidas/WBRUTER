@@ -92,6 +92,8 @@ add_to_conf() {
 
 # CORES (set as NOT default - this is for bruteforcing faster and other things will be done from this, curl in parallel etc )
     CPU_FAMILY_INTEL=$(cat /sys/devices/cpu/caps/pmu_name)  # wuseman style: https://unix.stackexchange.com/a/530726
+    CPU_FAMILY_AMD="(sort this later for amd gcc -march=native -Q --help=target|tail -n2)"
+    CPU_FAMILY_ARM="$(uname -m)"
     CPU_CORES=$(nproc)
     CPU_CORES_PLUS_ONE=$(( NUMCPUS + 1 ))
     CPU_THREADS=(echo CPU threads: $(grep -c processor /proc/cpuinfo))
