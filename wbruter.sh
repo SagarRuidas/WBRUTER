@@ -242,6 +242,23 @@ android_cli_6digits_older() {
     done
 }
 
+android_cli_bruteforce_check_lock_method() {
+    echo "adding next"
+}
+
+android_cli_bruteforce_erase() {
+    echo "adding next"
+}
+
+
+android_cli_bruteforce_removeCache() {
+    echo "adding next"
+}
+
+android_cli_set-resume-on-reboot-provider-package() {
+    echo "adding next"
+}
+
 
 android_cli_bruteforce_4digits_new() {
     echo "adding next"
@@ -254,6 +271,11 @@ android_cli_bruteforce_6digits_older() {
 android_cli_bruteforce_passphrase() {
     echo "adding next"
 }
+
+android_cli_bruteforce_facematch() {
+    echo "adding next"
+}
+
 
 android_cli_bruteforce_facematch() {
     echo "adding next"
