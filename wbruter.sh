@@ -58,7 +58,7 @@ add_to_conf() {
 
 # -Author ---------------------------------------------------------------------------
 #
-#      Print author of Emagnet project
+#      Print author of wbruter project
 #
 # -----------------------------------------------------------------------------------
 wbruter_author() {
