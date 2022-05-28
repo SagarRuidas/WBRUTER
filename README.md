@@ -9,7 +9,8 @@ How to stay safe? It's simple, stop using your phone device: 📵
 References ^
 
 [Apple's Operating Systems Are Malware](https://www.gnu.org/proprietary/malware-apple.html)
-[Google confirms that advanced backdoor came preinstalled on Android devices]([https://www.gnu.org/proprietary/malware-apple.html](https://www.reddit.com/r/linux/comments/bxp25x/google_confirms_that_advanced_backdoor_came/))
+
+[Google confirms that advanced backdoor came preinstalled on Android devices](https://www.reddit.com/r/linux/comments/bxp25x/google_confirms_that_advanced_backdoor_came/)
 
 #### README
 
