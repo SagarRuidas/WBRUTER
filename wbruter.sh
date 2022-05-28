@@ -171,7 +171,7 @@ multidevices() {
 
 
 
-android_cli_4digits() {
+android_cli_4digits_older() {
     cr=`echo $'\n.'`
     cr=${cr%.}
     printf "%52s\n" | tr ' ' '-'
@@ -208,7 +208,7 @@ android_cli_4digits() {
 
 
 
-android_cli_6digits() {
+android_cli_6digits_older() {
     cr=`echo $'\n.'`
     cr=${cr%.}
     printf "%52s\n" | tr ' ' '-'
