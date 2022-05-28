@@ -1,7 +1,7 @@
 # WBRUTER
 
 Upgrade in Progress....Are your password cracked on the picture? Don't blame me, blame the site admin that is NOT banning bruteforce attempts
- + It's not my screens, k? Whatever, that guy who used my tool for this wanted to show me his screens, looks cool, right? 
+ + It's not my screens, k? Whatever, that guy who used my tool for this wanted to show me his screens, looks cool, right? (read the tabs if you're smart, I did! You will now know wich sites that does NOT block bruteforce attempts, fuck them, they put us ALL in danger by not knowing how to secure their sites so that's why I sharing this pictures
  
 Don't hate the player hate the game!
 
