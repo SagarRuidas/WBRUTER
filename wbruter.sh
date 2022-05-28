@@ -1,5 +1,5 @@
 #!/bin/bash
-## Hey dev, I am not sure how to execute all commands yet but I think i will do this with getopts and longoptions
+
 # - iNFO -----------------------------------------------------------------------------
 #
 #        Author: wuseman <wuseman@nr1.nu>
@@ -106,7 +106,7 @@ add_to_conf() {
 #
 # -----------------------------------------------------------------------------------
 wbruter_author() {
-    cat << "EOF"
+cat << "EOF"
  Copyright (C) 2018-2022, wuseman
  wbruter was founded in 2018 and was released as open source
  on github.com/wuseman/wbruter in January 2018 and is licensed
@@ -189,7 +189,6 @@ EOF
 ####                                                                        ####
 ################################################################################
 ################################################################################
-
 androiddebug() {
     case $(adb devices | awk '{print $2}' | sed 1d | sed '$d') in
         "unauthorized") echo "* You must enable usb-debugging in developer settings." ;;
