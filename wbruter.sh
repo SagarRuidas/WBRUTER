@@ -77,10 +77,9 @@ EOF
 }
 
 
-
 # - Terminal Line--------------------------------------------------------------------
 #
-#      Print line as many columns your screen/monitor/terminal is
+#      Print line as many columns your screen/monitor/terminal is (NOT IN USE ATM!!)
 #
 # -----------------------------------------------------------------------------------
 terminal_line() {
@@ -103,8 +102,12 @@ wbruter_license(){
 
 
 
-
-
+# - Android RELATED! -------------------------------------------------------------------
+#
+#      Everything for android is from here until next comment fields
+#
+# --- ANDROID RELATED STARTS HERE ---- -------------------------------------------------
+ 
 show_help_android() {
     if [[ -z $1 ]];then
         STATUS=$(cat $(pwd)/.wdroid-status)
@@ -350,6 +353,7 @@ android_cli_bruteforce_facematch() {
 }
 
 
+# --- ANDROID RELATED ENDS HERE ---- ----------------------------------------------------
 
 gmail_bruteforce() {
     echo "TEMP: adding a new and faster method within hours or few days - TO BE REMOVED"
