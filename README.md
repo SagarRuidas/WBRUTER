@@ -1,6 +1,15 @@
 # WBRUTER
 
+## Changelog (temp)
+#### 2022-05-28: 
+
+	New commands for bruteforcing android and removed colors 
+	Added my new header
+        -a 4/6 for bruteforce android pin in cli (really really slow, to be updated later today for a much faster and better way to bruteforcing recent  versions)
+	-A 4/6 for bruteforce android pin via GUI
+
 #### README
+
 
 wbruter is is the first tool wich has been released as open source wich can guarantee **100%** that your pin code will be cracked aslong as usb debugging has been enable. wbruter also includes some other brute methods like dictionary attacks for gmail, ftp, rar, zip and some other file extensions. 
 
