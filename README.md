@@ -6,9 +6,6 @@ wbruter is is the first tool wich has been released as open source wich can guar
 
 wbruter will allways try to bring support for rare protocols, wbruter wont contain common stuff like other brute tools cover like facebook, snapchat, instagram and you name it (except a few exceptions, very few)
 
-_Many times it's the easiest methods that are the most powerful methods, it's just a matter of using your imagination ;-)_
-
-
 ## INFO: 2020-07-11:
 
 Android and Google, now have set a rule for locksettings via cli as via gui earlier, if you try to many attempts within X seconds you will be blocked for X seconds so wbruter via cli wont work anymore on devices that has been upgraded to latest version Android 10, older version should work fine unless they are upgraded to latest android version. 
