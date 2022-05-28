@@ -243,13 +243,19 @@ android_cli_6digits_older() {
 }
 
 
-
-
-android_cli_4digits_new() {
+android_cli_bruteforce_4digits_new() {
     echo "adding next"
 }
 
-android_cli_6digits_older() {
+android_cli_bruteforce_6digits_older() {
+    echo "adding next"
+}
+
+android_cli_bruteforce_passphrase() {
+    echo "adding next"
+}
+
+android_cli_bruteforce_fingerprint() {
     echo "adding next"
 }
 
