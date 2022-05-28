@@ -14,8 +14,11 @@ References ^
 
 [After Google successfully beat back Triada in 2017, its developers found a new way in.](https://arstechnica.com/information-technology/2019/06/google-confirms-2017-supply-chain-attack-that-sneaked-backdoor-on-android-devices/)
 
-All respect to Google who tells the truth so there is not much to reveal, I do not share this project because I hack accounts but because I test the security of my own devices. Why do you think I'm like you? Don't ask me for hacking personal acccounts or phones, that is what idiots and BREAKERS does, not hackers! 
+[PDF - Google Android Security 2018 Report Final](https://source.android.com/security/reports/Google_Android_Security_2018_Report_Final.pdf)
 
+All respect to Google who tells the truth so there is not much to reveal, I do not share this project because I hack accounts but because I test the security of my own devices. Why do you think I'm like you? Don't ask me for hacking personal acccounts or phones, that is what idiots and BREAKERS does, not hackers so dont use my tool for get youtube viewers or visitors for earn cash your fool. I doing this without asking for donations, favors. I follow the hacking ethics and want everything to be FREE and OPEN so, so plz (if you're not one of the ppl that selling my tools on darknet ignore this) 
+ fuck you and stop spread bullshit! This is nto a hacking tool for crack a stolen devices pincode, it is for keep my friends/family updated how to secure their devices since I dont use any device myself, I don't use malware! k? 
+ 
 #### README
 
 
