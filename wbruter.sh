@@ -1,4 +1,10 @@
 #!/bin/bash
+# Until im done
+echo "You really should learn read readmes or commits, doing it for you.."
+sleep 1
+bash wbruter.working.sh -h
+
+exit 
 
 # - iNFO -----------------------------------------------------------------------------
 #
@@ -43,18 +49,10 @@
 #
 # - End of Header -------------------------------------------------------------
 
-## usages
-
-show_help_android() {
- if [[ -z $1 ]];then
-     STATUS=$(cat $(pwd)/.wdroid-status)
-     rm $(pwd)/.wdroid-status
-     if [[ $STATUS = "normal" ]]; then
-            printf "\nDevice is in $STATUS mode, what are you trying to do?"
-           printf "Your device must be in normal mode when attacking pin code\n"
-         usage
-         fi
- }
+add_to_conf() {
+ANDROID_VERSION="$(adb shell getprop ro.product.build.version.release)"
+DEVICE_ROOTED="$( adb shell hash su; [[ $? = "0" ]] && echo yes||echo no)"
+}
 
 
  function show_help_ftp (){
@@ -242,6 +240,23 @@ android_cli_6digits_older() {
     done
 }
 
+android_cli_bruteforce_check_lock_method() {
+    echo "adding next"
+}
+
+android_cli_bruteforce_erase() {
+    echo "adding next"
+}
+
+
+android_cli_bruteforce_removeCache() {
+    echo "adding next"
+}
+
+android_cli_set-resume-on-reboot-provider-package() {
+    echo "adding next"
+}
+
 
 android_cli_bruteforce_4digits_new() {
     echo "adding next"
@@ -260,7 +275,9 @@ android_cli_bruteforce_facematch() {
 }
 
 
-
+android_cli_bruteforce_facematch() {
+    echo "adding next"
+}
 
 ################################################################################
 ################################################################################
