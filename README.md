@@ -1,10 +1,15 @@
 # WBRUTER
 
-## Changelog (temp)
+## INFO: 2022-05-28: 
 
-#### 2022-05-28: 
+Redo the whole project as I have not updated anything for 2 years and it has certainly become popular this repot, now we do things a little faster and a little snow builder they are 2022!  When this text is not visible it is ready then, use "wbruter.working.sh" plz, I do this on the go / dirty. Should be done today or tomorrow, until then, happy cracking/hacking/breaking with the slow method ;-)
 
-Doing this on the fly. Be with me! 
+How to stay safe? It's simple, stop using your phone device: 📵
+
+References ^
+
+[Apple's Operating Systems Are Malware](https://www.gnu.org/proprietary/malware-apple.html)
+[Google confirms that advanced backdoor came preinstalled on Android devices]([https://www.gnu.org/proprietary/malware-apple.html](https://www.reddit.com/r/linux/comments/bxp25x/google_confirms_that_advanced_backdoor_came/))
 
 #### README
 
