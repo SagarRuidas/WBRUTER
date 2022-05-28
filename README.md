@@ -14,7 +14,7 @@ References ^
 
 [After Google successfully beat back Triada in 2017, its developers found a new way in.](https://arstechnica.com/information-technology/2019/06/google-confirms-2017-supply-chain-attack-that-sneaked-backdoor-on-android-devices/)
 
-All respect to Google who tells the truth so there is not much to reveal, I do not share this project because I hack accounts but because I test the security of my own devices. Why do you think I'm like you? Don't ask me for hacking personal acccounts or phones, that is what idiots does.
+All respect to Google who tells the truth so there is not much to reveal, I do not share this project because I hack accounts but because I test the security of my own devices. Why do you think I'm like you? Don't ask me for hacking personal acccounts or phones, that is what idiots and BREAKERS does, not hackers! 
 
 #### README
 
