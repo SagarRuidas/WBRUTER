@@ -43,13 +43,31 @@
 #
 # - End of Header -------------------------------------------------------------
 
-################################################################################
-################################################################################
-####                                                                        ####
-#### MISC/GENERAL                                                           ####
-####                                                                        ####
-################################################################################
-################################################################################
+# -Author ---------------------------------------------------------------------------
+#
+#      Print author of Emagnet project
+#
+# -----------------------------------------------------------------------------------
+wbruter_author() {
+    cat << "EOF"
+ Copyright (C) 2018-2022, wuseman
+ wbruter was founded in 2018 and was released as open source
+ on github.com/wuseman/wbruter in January 2018 and is licensed
+ under GNU LESSER GENERAL PUBLIC LICENSE GPLv3
+ 
+   - Author: wuseman <wuseman@nr1.nu>
+   - IRC   : wuseman <irc.libera.chat>
+
+ Please report bugs/issues on:
+   - https://github.com/wuseman/wbruter
+EOF
+}
+
+# - Settings ---------------------------------------------------------------------------
+#
+#      Print author of Emagnet project
+#
+# -----------------------------------------------------------------------------------
 
 
 # - Terminal Line--------------------------------------------------------------------
@@ -57,7 +75,7 @@
 #      Print line as many columns your screen/monitor/terminal is
 #
 # -----------------------------------------------------------------------------------
-function terminal_line() {
+terminal_line() {
     printf "\r%*s\r%s\n" $(tput cols) "$2" "$1"|tr ' ' '-'
 }
 
@@ -362,13 +380,11 @@ znc_bruteforce() {
 
 
 lftp_bruteforce() {
-    which ftp &> /dev/null
+    hash lftp &> /dev/null
     if [[ $? -eq "1" ]]; then
         printf "+ You must install \e[1;1mftp\e[0m package before you can attack by this method, aborted\n" 
         exit 0
     fi
-
-
 
 
 while getopts ":i:p:u:P:avh" o; do
