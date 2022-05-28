@@ -361,7 +361,7 @@ znc_bruteforce() {
 
 
 
-ftp_bruteforce() {
+lftp_bruteforce() {
     which ftp &> /dev/null
     if [[ $? -eq "1" ]]; then
         printf "+ You must install \e[1;1mftp\e[0m package before you can attack by this method, aborted\n" 
