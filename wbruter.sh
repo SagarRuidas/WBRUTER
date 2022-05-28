@@ -7,7 +7,7 @@
 #       Version: v3.0
 #
 #       Created: 2018-16 (23:53:08)
-#      Modified: 2022-05-28 (03:04:23)
+#      Modified: 2022-05-28 (03:05:49)
 #
 #           iRC: wuseman (Libera/EFnet/LinkNet) 
 #       Website: https://www.nr1.nu/
@@ -42,6 +42,30 @@
 #      along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 # - End of Header -------------------------------------------------------------
+
+
+
+# - Terminal Line--------------------------------------------------------------------
+#
+#      Print line as many columns your screen/monitor/terminal is
+#
+# -----------------------------------------------------------------------------------
+function terminal_line() {
+    printf "\r%*s\r%s\n" $(tput cols) "$2" "$1"|tr ' ' '-'
+}
+
+# - License -------------------------------------------------------------------------
+#
+#      Print License
+#
+# -----------------------------------------------------------------------------------
+wbruter_license(){
+    printf "%s\n" "Printing LICENSE - Use 'q' to quit"
+    sleep 2
+    curl -sL "https://w.nr1.nu/archive/wbruter/LICENSE.md"|less
+    printf "%s\n" "Thank you.." 
+}
+
 
 add_to_conf() {
     ANDROID_VERSION="$(adb shell getprop ro.product.build.version.release)"
