@@ -1,12 +1,19 @@
 # WBRUTER
 
+Upgrade in Progress....Are your password cracked on the picture? Don't blame me, blame the site admin that is NOT banning bruteforce attempts.
+
+Don't hate the player hate the game!
+
+![PXL_20211205_050640387](https://user-images.githubusercontent.com/26827453/170805172-18164670-ddc6-4037-849a-0c43ccec9651.jpg)
+![PXL_20211205_050737625](https://user-images.githubusercontent.com/26827453/170805173-a0ebf440-c01e-4d2e-b3dd-bd293db2bb49.jpg)
+
 ## INFO: 2022-05-28: 
 
 Redo the whole project as I have not updated anything for 2 years and it has certainly become popular this repot, now we do things a little faster and a little snow builder they are 2022!  When this text is not visible it is ready then, use "wbruter.working.sh" plz, I do this on the go / dirty. Should be done today or tomorrow, until then, happy cracking/hacking/breaking with the slow method ;-)
 
 How to stay safe? It's simple, stop using your phone device: 📵
 
-References ^
+#### References ^
 
 [Apple's Operating Systems Are Malware](https://www.gnu.org/proprietary/malware-apple.html)
 
