@@ -1,6 +1,6 @@
 # WBRUTER
 
-Upgrade in Progress....Are your password cracked on the picture? Don't blame me, blame the site admin that is NOT banning bruteforce attempts
+##### This tool is NOT for hacking your ex girlfriend, your boss or anything like that, the purpose is to check YOUR security and your passwords security from  various websites/tools/keys. It's up to you how to use wbruter but remember, the developer of this tool can never be held responsible under any circumstances for what other users have chosen to do with the tool. Images presented do not have to be from the developer himself and is shared screenshots from some of my friends in universe and they are and will allways be unknown for you and even myself! wuseman doing this as a non-profit hacker / cracker / breaker depending on what you choose to call it. Upgrade in Progress....Are your password cracked on the picture? Don't blame me, blame the site admin that is NOT banning bruteforce attempts
  + It's not my screens, k? Whatever, that guy who used my tool for this wanted to show me his screens, looks cool, right? (read the tabs if you're smart, I did! You will now know wich sites that does NOT block bruteforce attempts, fuck them, they put us ALL in danger by not knowing how to secure their sites so that's why I sharing this pictures
  
 Don't hate the player hate the game!
