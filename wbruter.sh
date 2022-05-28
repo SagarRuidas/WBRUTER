@@ -245,8 +245,13 @@ android_cli_6digits_older() {
 
 
 
+android_cli_4digits_new() {
+    echo "adding next"
+}
 
-
+android_cli_6digits_older() {
+    echo "adding next"
+}
 
 
 
