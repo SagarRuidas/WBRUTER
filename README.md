@@ -1,11 +1,15 @@
 # WBRUTER
 
 ## Changelog (temp)
+
 #### 2022-05-28: 
 
-	New commands for bruteforcing android and removed colors 
-	Added my new header
-        -a 4/6 for bruteforce android pin in cli (really really slow, to be updated later today for a much faster and better way to bruteforcing recent  versions)
+* New commands for bruteforcing android and removed colors 
+
+Added my new header
+
+	-a 4/6 for bruteforce android pin in cli (really really slow, to be updated to be Nr1 in the faster method later hopefully today)
+
 	-A 4/6 for bruteforce android pin via GUI
 
 #### README
