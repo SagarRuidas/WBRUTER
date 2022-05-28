@@ -88,7 +88,7 @@ add_to_conf() {
     DEVICE_VERSION="$(adb shell getprop ro.product.build.version.release)"
     DEVICE_ROOTED="$( adb shell hash su; [[ $? = "0" ]] && echo yes||echo no)"
     DEVICE_MODEL="$(adb shell getprop ro.product.model)"
-    DEVICE_MODEL="$(adb shell getprop init.svc.health-hal-2-1-samsung)"
+    DEVICE_HEALTHHAL="$(adb shell getprop init.svc.health-hal-2-1-samsung)"
 }
 
 show_help_android() {
