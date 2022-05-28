@@ -274,12 +274,6 @@ multidevices() {
     fi
 }
 
-
-
-### bruteforcer comming soon
-
-
-
 android_cli_4digits_older() {
     cr=`echo $'\n.'`
     cr=${cr%.}
@@ -313,8 +307,6 @@ android_cli_4digits_older() {
         fi
     done
 }
-
-
 
 
 android_cli_6digits_older() {
@@ -356,6 +348,13 @@ android_cli_6digits_older() {
 #android_cli_4digits_older
 #android_cli_6digits_older
 
+#### NEW METHOD! 
+
+# adb shell time cmd lock_settings = 0.03s
+
+#### old method
+
+# adb shell time locksetting = 01.22s 
 
 android_cli_bruteforce_check_lock_method() {
     echo "adding next"
