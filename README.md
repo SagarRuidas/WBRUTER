@@ -4,7 +4,7 @@
 
 #### 2022-05-28: 
 
-*New commands for bruteforcing android and removed colors 
+* New commands for bruteforcing android and removed colors 
 
 Added my new header
 
